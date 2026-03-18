@@ -2,10 +2,140 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WhatsAudio — Convert WhatsApp voice messages to MP3</title>
-    <meta name="description" content="Convert WhatsApp voice messages (.ogg) to MP3, WAV or M4A — 100% in your browser, no upload needed." />
+
+    <!-- Primary Meta Tags -->
+    <title>WhatsAudio — Free WhatsApp Voice Message to MP3 Converter</title>
+    <meta name="description" content="Convert WhatsApp voice messages (.ogg/.opus) to MP3, WAV or M4A for free. Works 100% in your browser — no upload, no account needed. Fast, private and secure." />
+    <meta name="keywords" content="whatsapp voice message to mp3, convert whatsapp audio, ogg to mp3 converter online free, whatsapp ogg converter, converter mensagem de voz whatsapp mp3, converter audio whatsapp, opus to mp3" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Hercules Camara" />
+    <link rel="canonical" href="https://whatsaudio.herculescamara.com/" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://whatsaudio.herculescamara.com/" />
+    <meta property="og:title" content="WhatsAudio — Free WhatsApp Voice Message to MP3 Converter" />
+    <meta property="og:description" content="Convert WhatsApp voice messages (.ogg/.opus) to MP3, WAV or M4A for free. 100% in your browser — no upload, no account needed." />
+    <meta property="og:image" content="https://whatsaudio.herculescamara.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="WhatsAudio — Convert WhatsApp voice messages to MP3, free and private" />
+    <meta property="og:site_name" content="WhatsAudio" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="pt_BR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://whatsaudio.herculescamara.com/" />
+    <meta name="twitter:title" content="WhatsAudio — Free WhatsApp Voice Message to MP3 Converter" />
+    <meta name="twitter:description" content="Convert WhatsApp voice messages (.ogg/.opus) to MP3, WAV or M4A for free. 100% in your browser — no upload, no account needed." />
+    <meta name="twitter:image" content="https://whatsaudio.herculescamara.com/og-image.png" />
+
+    <!-- Theme Color (matches WhatsApp green) -->
+    <meta name="theme-color" content="#25D366" />
+
+    <!-- JSON-LD: SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "WhatsAudio",
+      "url": "https://whatsaudio.herculescamara.com",
+      "description": "Free online tool to convert WhatsApp voice messages (.ogg/.opus) to MP3, WAV or M4A. Works 100% in your browser — no upload, no registration required.",
+      "applicationCategory": "MultimediaApplication",
+      "applicationSubCategory": "Audio Converter",
+      "operatingSystem": "Web Browser (Chrome, Firefox, Safari, Edge)",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Convert WhatsApp .ogg audio to MP3",
+        "Convert WhatsApp .ogg audio to WAV",
+        "Convert WhatsApp .ogg audio to M4A",
+        "100% browser-based, no server upload",
+        "No registration or account required",
+        "Free to use"
+      ],
+      "screenshot": "https://whatsaudio.herculescamara.com/og-image.png",
+      "author": {
+        "@type": "Person",
+        "name": "Hercules Camara",
+        "url": "https://herculescamara.com"
+      }
+    }
+    </script>
+
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I convert a WhatsApp voice message to MP3?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Upload your .ogg or .opus file from WhatsApp to WhatsAudio, select MP3 as the output format, and click Convert. The converted file will be ready to download in seconds — all without uploading anything to a server."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is WhatsAudio free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, WhatsAudio is completely free. No subscriptions, no account needed, and no hidden fees."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my audio files safe? Does WhatsAudio upload my files?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your files never leave your device. WhatsAudio uses FFmpeg compiled to WebAssembly, which runs entirely in your browser. No data is sent to any server."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What audio formats does WhatsAudio support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "WhatsAudio accepts .ogg and .opus files (the format used by WhatsApp voice messages) and converts them to MP3, WAV, or M4A."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why can't I play WhatsApp voice messages on my computer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "WhatsApp saves voice messages in .ogg format using the Opus audio codec. Most desktop media players don't support this format natively. Converting to MP3 or WAV makes the files compatible with any player."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does WhatsAudio work on mobile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, WhatsAudio works on any modern browser including Chrome and Safari on Android and iOS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como converter mensagem de voz do WhatsApp para MP3?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Acesse o WhatsAudio, faça upload do arquivo .ogg ou .opus exportado do WhatsApp, selecione o formato MP3 e clique em Converter. O arquivo MP3 estará pronto para download em segundos, sem enviar nada para nenhum servidor."
+          }
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

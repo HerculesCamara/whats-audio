@@ -75,7 +75,7 @@ export function useFFmpeg() {
       await ffmpeg.exec(formatCommands[format]);
       const data = await ffmpeg.readFile(outputName);
 
-      const blob = new Blob([data as Uint8Array], { type: mimeTypes[format] });
+      const blob = new Blob([(data as Uint8Array).slice()], { type: mimeTypes[format] });
       const url = URL.createObjectURL(blob);
 
       const originalName = file.name.replace(/\.[^/.]+$/, '');
