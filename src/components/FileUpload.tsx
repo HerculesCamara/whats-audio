@@ -1,39 +1,40 @@
 import { useCallback, useState } from 'react';
+import { useLanguage } from '../hooks/useLanguage';
 
 interface FileUploadProps {
   onFileSelect: (file: File) => void;
   disabled?: boolean;
 }
 
-const MAX_SIZE = 50 * 1024 * 1024; // 50MB
+const MAX_SIZE = 50 * 1024 * 1024;
 const VALID_FORMATS = ['.ogg', '.opus'];
 
 export function FileUpload({ onFileSelect, disabled }: FileUploadProps) {
   const [dragOver, setDragOver] = useState(false);
   const [validationError, setValidationError] = useState<string | null>(null);
+  const { T } = useLanguage();
 
   const validateAndSelect = useCallback((file: File) => {
     setValidationError(null);
 
     if (file.size > MAX_SIZE) {
-      setValidationError('File is too large. Please use files under 50MB.');
+      setValidationError(T.upload.errorSize);
       return;
     }
 
     const extension = file.name.toLowerCase().slice(file.name.lastIndexOf('.'));
     if (!VALID_FORMATS.includes(extension)) {
-      setValidationError('Please select a valid audio file (.ogg, .opus)');
+      setValidationError(T.upload.errorFormat);
       return;
     }
 
     onFileSelect(file);
-  }, [onFileSelect]);
+  }, [onFileSelect, T]);
 
   const handleDrop = useCallback((e: React.DragEvent) => {
     e.preventDefault();
     setDragOver(false);
     if (disabled) return;
-
     const file = e.dataTransfer.files[0];
     if (file) validateAndSelect(file);
   }, [disabled, validateAndSelect]);
@@ -67,9 +68,9 @@ export function FileUpload({ onFileSelect, disabled }: FileUploadProps) {
             </svg>
           </div>
           <div className="text-center">
-            <p className="text-white font-medium">Drop your audio file here</p>
-            <p className="text-gray-400 text-sm mt-1">or click to browse</p>
-            <p className="text-gray-500 text-xs mt-2">Accepts .ogg, .opus files</p>
+            <p className="text-white font-medium">{T.upload.title}</p>
+            <p className="text-gray-400 text-sm mt-1">{T.upload.subtitle}</p>
+            <p className="text-gray-500 text-xs mt-2">{T.upload.formats}</p>
           </div>
         </div>
         <input

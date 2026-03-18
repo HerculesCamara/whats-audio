@@ -1,14 +1,18 @@
+import { useLanguage } from '../hooks/useLanguage';
+
 interface ProgressBarProps {
   progress: number;
   loading?: boolean;
 }
 
 export function ProgressBar({ progress, loading }: ProgressBarProps) {
+  const { T } = useLanguage();
+
   return (
     <div className="w-full">
       <div className="flex justify-between items-center mb-2">
         <span className="text-gray-400 text-sm">
-          {loading ? 'Loading converter (first time only)...' : `Converting... ${progress}%`}
+          {loading ? T.progress.loading : T.progress.converting(progress)}
         </span>
         <span className="text-whatsapp text-sm font-medium">{loading ? '' : `${progress}%`}</span>
       </div>

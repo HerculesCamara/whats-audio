@@ -1,3 +1,4 @@
+import { useLanguage } from '../hooks/useLanguage';
 import type { OutputFormat } from '../hooks/useFFmpeg';
 
 interface FormatSelectorProps {
@@ -6,16 +7,18 @@ interface FormatSelectorProps {
   disabled?: boolean;
 }
 
-const formats: { value: OutputFormat; label: string; description: string }[] = [
-  { value: 'mp3', label: 'MP3', description: 'Most compatible' },
-  { value: 'wav', label: 'WAV', description: 'Uncompressed' },
-  { value: 'm4a', label: 'M4A', description: 'Apple / AAC' },
-];
-
 export function FormatSelector({ value, onChange, disabled }: FormatSelectorProps) {
+  const { T } = useLanguage();
+
+  const formats: { value: OutputFormat; label: string; description: string }[] = [
+    { value: 'mp3', label: 'MP3', description: T.format.mp3Desc },
+    { value: 'wav', label: 'WAV', description: T.format.wavDesc },
+    { value: 'm4a', label: 'M4A', description: T.format.m4aDesc },
+  ];
+
   return (
     <div className="w-full">
-      <p className="text-gray-400 text-sm mb-3">Convert to:</p>
+      <p className="text-gray-400 text-sm mb-3">{T.format.label}</p>
       <div className="grid grid-cols-3 gap-3">
         {formats.map((fmt) => (
           <button
